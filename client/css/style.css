@@ -1,0 +1,659 @@
+/* Général */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: #1000bc;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  position: relative;
+}
+
+header .logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 5px 10px;
+}
+
+nav ul li a:hover,
+nav ul li .active {
+  background-color: #4639d5;
+  border-radius: 5px;
+}
+
+/* Barre de recherche */
+.search-form {
+  display: none; 
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  width: 200px;
+  z-index: 1000;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.search-form input[type="text"] {
+  padding: 5px;
+  font-size: 16px;
+}
+
+.search-form button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.search-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Icone de recherche */
+.search-icon {
+  cursor: pointer;
+}
+
+/* Formulaires */
+.form-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #575757;
+}
+
+/* Profil */
+.profile-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-content {
+  padding: 20px;
+}
+
+.user-info {
+  margin-bottom: 30px;
+}
+
+.user-info p {
+  margin: 10px 0;
+}
+
+.purchase-history h3 {
+  margin-bottom: 10px;
+}
+
+.purchase-history ul {
+  list-style: none;
+  padding: 0;
+}
+
+.purchase-item {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.logout-link {
+  color: red;
+  text-decoration: none;
+}
+
+.logout-link:hover {
+  text-decoration: underline;
+}
+
+/* Produits */
+main {
+  padding: 20px;
+}
+
+.products-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; 
+  justify-content: center; 
+}
+
+/* Carte de produit */
+.product {
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 100%; 
+  max-width: calc(20% - 20px); 
+  text-align: center;
+  box-sizing: border-box; 
+  overflow-wrap: break-word; 
+}
+
+.product img {
+  max-width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.product h3 {
+  margin: 10px 0;
+  font-size: 14px;
+  color: #000;
+  overflow-wrap: break-word;
+}
+
+.product h3.price {
+  color: #e74c3c;
+}
+
+.product h4 {
+  margin: 5px 0;
+  font-size: 10px;
+  color: #1000bc;
+  overflow-wrap: break-word; 
+}
+
+.product button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.product button:hover {
+  background-color: #0056b3;
+}
+
+.product-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+.product-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: calc(20% - 20px); 
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+}
+
+.product-card img {
+  width: 100%;
+  height: 60%; 
+  object-fit: contain; 
+  margin-bottom: 10px;
+}
+
+.product-card h6 {
+  font-size: 15px;
+  margin: 5px 0;
+}
+
+.product-card p {
+  font-size: 13px;
+  margin: 0;
+  overflow-wrap: break-word; 
+}
+
+.product-card button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.product-card button:hover {
+  background-color: #555;
+}
+
+/* Panier */
+.cart-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.cart-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.cart-items {
+  margin-bottom: 30px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.cart-item .product-info h3 {
+  font-size: 18px;
+  margin: 0 0 5px 0;
+  color: #333;
+}
+
+.cart-item .product-info p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.product-actions {
+  display: flex;
+  align-items: center;
+}
+
+.product-actions form {
+  margin: 0;
+}
+
+.product-actions button {
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.product-actions button:hover {
+  background-color: #c0392b;
+}
+
+.cart-summary {
+  text-align: center;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.cart-summary h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.cart-summary p {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+#checkout-button {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background-color: #27ae60;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+#checkout-button:hover {
+  background-color: #2ecc71;
+}
+
+/* Adaptation pour les Tablettes */
+@media (max-width: 768px) {
+  .product-card {
+    width: calc(50% - 20px); 
+  }
+
+  .products {
+    justify-content: center;
+  }
+
+  .product {
+    flex: 1 1 calc(50% - 20px); 
+  }
+
+  .cart-container {
+    padding: 15px;
+  }
+
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .product-actions {
+    margin-top: 10px;
+  }
+  .contact-page {
+    padding: 15px;
+  }
+}
+
+/* Adaptation pour les Mobiles */
+@media (max-width: 480px) {
+  .product-card {
+    width: 100%; 
+  }
+  .products {
+    flex-direction: column;
+  }
+  .products-container {
+    flex-direction: column; 
+    gap: 0; 
+  }
+  .product {
+      width: 100%; 
+      
+  }
+  nav ul {
+    flex-direction: column;
+  }
+  nav ul li {
+    margin: 10px 0;
+  }
+  .cart-container {
+    padding: 10px;
+  }
+  .cart-item {
+    padding: 10px;
+  }
+  #checkout-button {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  /* Style de la barre de recherche */
+  .search-form {
+    display: none; 
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 200px;
+    z-index: 1000;
+    background-color: #fff; 
+    border: 1px solid #ccc; 
+    padding: 10px;
+  }
+
+  .search-icon {
+    display: block; 
+  }
+
+  .search-form.active {
+    display: flex; 
+  }
+
+  .contact-info h2, .contact-form h2 {
+    font-size: 20px;
+  }
+
+  .input-group input, .input-group textarea {
+    font-size: 14px;
+  }
+
+  .btn {
+    font-size: 14px;
+  }
+}
+
+/* Style du pied de page */
+footer {
+  background-color: #1000bc;
+  color: #fff; 
+  padding: 20px 0; 
+  font-family: Arial, sans-serif; 
+}
+
+/* Container principal du pied de page */
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; 
+  max-width: 1200px;
+  margin: 0 auto; 
+  padding: 0 20px; 
+}
+
+/* Sections du pied de page */
+.footer-section {
+  flex: 1 1 200px; 
+  margin: 10px; 
+}
+
+/* Titres des sections */
+.footer-section h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #f4f4f4; 
+}
+
+/* Style des paragraphes */
+.footer-section p {
+  margin: 5px 0;
+}
+
+/* Style des listes de liens */
+.footer-section ul {
+  list-style-type: none; 
+  padding: 0; 
+}
+
+.footer-section ul li {
+  margin: 5px 0; 
+}
+
+.footer-section ul li a {
+  color: #f4f4f4; 
+  text-decoration: none; 
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline; 
+}
+
+/* Style du bas du pied de page */
+.footer-bottom {
+  background-color: #1f008e; 
+  text-align: center; 
+  padding: 10px 0; 
+  margin-top: 20px; 
+}
+
+.footer-bottom p {
+  margin: 0; 
+  font-size: 14px; 
+}
+
+/* Conteneur principal de la page de contact */
+.contact-page {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-page h1 {
+  text-align: center;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.contact-info, .contact-form {
+  margin-bottom: 20px;
+}
+
+.contact-info h2, .contact-form h2 {
+  font-size: 24px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.contact-info p, .contact-form p {
+  font-size: 16px;
+  color: #555;
+  margin: 5px 0;
+}
+
+/* Style pour les messages de succès et d'erreur */
+.success {
+  color: green;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Formulaire de contact */
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.input-group input, .input-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.input-group textarea {
+  height: 150px;
+  resize: vertical; 
+}
